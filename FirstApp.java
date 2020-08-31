@@ -44,7 +44,7 @@ public class FirstApp {
         leapYears(year);
             }
     // 3. метод для решения примера
-    static float solveTheCase(byte a, short b, int c, long d)
+    static float solveTheCase(float a, float b, float c, float d)
     {
         float Case = a * (b + (c/d));
         System.out.println("Решением примера является значение " + Case);
