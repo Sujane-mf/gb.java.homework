@@ -10,6 +10,7 @@ public class Main {
 	    int [][] arr4 = new int[3][3];
 	    int [] arr5 = new int[5];
 	    int [] arr6 = {1, 5, 2,4};
+        fillDiagonal();
 	    fillTheArray(arr);
 	    System.out.println("Вы сформировали массив");
         System.out.println(Arrays.toString(arr));
@@ -158,5 +159,20 @@ public static void checkBalance (int [] arr6){
             }
         }
 }
+// еще один вариант выполнения 4 задания
+    public static void fillDiagonal() {
+        Scanner scanner = new Scanner(System.in);
+        int[][] arr8 = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.println("Введите любое число");
+                arr8[i][j] = scanner.nextInt();
+                if (i==j){arr8[i][j] = 1;
+                }
+                }
+                           }
+        for (int b = 0, p=3; b<4; b++,p--) {
+            arr8[b][p] = 1;
+        }printArr4(arr8);;
 }
 
