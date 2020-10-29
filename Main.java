@@ -10,18 +10,15 @@ package ru.geekbrains.j2_homework2;
  */
 public class Main {
 
-    public static void main(String[] args) {
-	String [][] array = new String[2][2];
-	try{
-	    CheckArr.checkArrSize(array);
-    }catch (MyArraySizeException e){
-	    System.out.println(e.getMessage());
-    }
-	CheckArr.fillTheArr(array);
-	CheckArr.printArr(array);
-		try{CheckArr.convertAndSum(array);}
-	catch (MyArrayDataException e2){
-	System.out.println(e2.getMessage());
-}
-    }
+	public static void main(String[] args) {
+		String[][] array = new String[4][3];
+		try {
+			CheckArr.checkArrSize(array);
+		} catch (MyArraySizeException e) {
+			System.out.println(e.getMessage());
+		}
+		CheckArr.fillTheArr(array);
+		CheckArr.printArr(array);
+		CheckArr.convertAndSum(array);
+	}
 }

@@ -5,13 +5,34 @@ import java.util.Scanner;
 public class CheckArr {
 // метод для проверки длины
     public static void checkArrSize(String[][] arr) throws MyArraySizeException {
-        if (arr.length == 2 && arr[0].length == 2) {
-            System.out.println("Массив соответствует заданному размеру 4 на 4");
-        } else {
+        if (arr.length != 4){
             throw new MyArraySizeException("Массив не соответствует заданному размеру");
         }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].length != 4) {
+                throw new MyArraySizeException("Массив не соответствует заданному размеру");
+            }
+        }
     }
- // метод для заполнения массива
+    // метод для проверки элементов и суммирования числовых
+    public static int convertAndSum(String[][]arr)  {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[0].length; j++){
+                try{
+                    sum += Integer.parseInt(arr[i][j]);
+                }
+                catch (NumberFormatException nm){
+                    throw new MyArrayDataException("В ячейке [" +i+ "][" +j+ "] данные неверного формата", nm);
+                }
+
+            }
+        }
+        System.out.println("Итоговая сумма " +sum);
+        return sum;
+
+    }
+    // метод для заполнения массива
     public static void fillTheArr(String[][] arr) {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < arr.length; i++) {
@@ -31,21 +52,5 @@ public class CheckArr {
             System.out.println();
         }
     }
- // метод для проверки элементов и суммирования числовых
-    public static void convertAndSum(String[][]arr) {
-        int sum = 0;
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr[0].length; j++){
 
-                                        try{
-                sum += Integer.parseInt(arr[i][j]);
-            } catch (RuntimeException nm){
-                throw new MyArrayDataException("В ячейке [" +i+ "][" +j+ "] данные неверного формата");
-                            }
-                                        finally {
-                                            System.out.println("Сумма " + sum);
-                                        }
-            }
-        }
-      }
 }
