@@ -37,21 +37,13 @@ public class Main {
         for (Map.Entry<String, Integer> entry : counts.entrySet()){
         System.out.println(entry.getKey() + " = " + entry.getValue());}
 
-        HashMap <String,String> card = new HashMap<String, String>();
+        HashMap<String, Set<String>> card = new HashMap<>();
         PhoneBook pb1 = new PhoneBook(card);
-        try {
-            pb1.addCard("9859855948","Иванов");
-            pb1.addCard("9859855949","Иванов");
-            pb1.addCard("9859855950","Петров");
-        } catch (WrongKeyException wk){
-            System.out.println(wk.getMessage());
+        pb1.addCard("Иванов", "9859625959");
+        pb1.addCard("Иванов", "9859615060");
+        pb1.addCard("Петров", "9859655161");
+        System.out.println(card);
+        System.out.println(pb1.getNumber("Иванов"));
+    }
         }
-
-        finally {
-            System.out.println(card);
-        }
-            pb1.getNumber ("Иванов");
-               }
-        }
-
 
