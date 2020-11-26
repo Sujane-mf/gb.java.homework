@@ -119,9 +119,7 @@ public class BasicAuthenticationService implements AuthenticationService, UserSe
      экземпляров класса User, добавленных в нашу фейковую БД List. Поля приватные, добираемся через геттер.
      * */
     public User doAuth(String email, String password) {
-        if (findByEmailAndPassword(email,password)!= null) {
-            return findByEmailAndPassword(email,password);
-        } else return null;
+        return findByEmailAndPassword(email,password);
 
 //        for (User user: users){
 //            if(user.getEmail().equals(email) && user.getPassword().equals(password)){
