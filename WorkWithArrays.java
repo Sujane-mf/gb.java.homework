@@ -7,14 +7,11 @@ public class WorkWithArrays {
     int [] newArr;
 
     public int [] findElementsAfterLast4AndMakeNewArr(int [] arr) {
-        try {
-            if (arr.length >= 4) {
-                System.out.println("Остаток по модулю: " + arr.length % 4);
-                newArr = copyOfRange(arr, arr.length - arr.length % 4, arr.length);
-            } else throw new RuntimeException();
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        if (arr.length <= 4){
+            throw new RuntimeException();
         }
+        System.out.println("Остаток по модулю: " + arr.length % 4);
+        newArr = copyOfRange(arr, arr.length - arr.length % 4, arr.length);
         return newArr;
     }
 
